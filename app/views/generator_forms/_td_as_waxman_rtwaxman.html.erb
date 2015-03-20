@@ -1,0 +1,160 @@
+<%= form_for(@generator_form) do |f| %>
+	<% if @generator_form.errors.any? %>
+		<div id="error_explanation">
+		<h2><%= pluralize(@generator_form.errors.count, "error") %> prohibited this generator_form from being saved:</h2>
+
+			<ul>
+			<% @generator_form.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">Basic Information</div>
+		<div class="panel-body">
+			<div class="field">
+				<%= f.label :name %><br>
+				<%= f.text_field :name %>
+			</div>
+			<div class="field">
+				<%= f.label :description %><br>
+				<%= f.text_area :description %>
+			</div>
+			<div class="field">
+				<%= f.label :status %><br>
+				<%= f.select(:status,options_for_select([["Public",1],["Private",0]])) %>
+			</div>
+		</div>
+	</div>
+	<%= f.hidden_field :generator_id, :value => params[:generator] %>
+	<%= f.hidden_field :type_id, :value => params[:type] %>
+	<%= f.hidden_field :user_id, :value => current_user.id %>
+
+<div class="panel panel-default">
+	<div class="panel-heading">BRITE: Top-Down AS Waxman Router Waxman</div>
+	<div class="panel-body">  
+	<div class="field">
+
+		<%= fields_for :fnss_simple_types_brite_td_waxman_rt_waxman do |b| %>
+
+		
+			<%= hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[Name]', :value => 5 %>
+
+			<%= label_tag 'edge Connect: ' %><code>Edge connect model</code><br>
+			<%= select_tag 'fnss_simple_types_brite_td_waxman_rt_waxman[edgeConn]', options_for_select([["Random", 1],
+				["Smallest Nonleaf", 2],["Smallest Deg",3],["k-Degree", 4]]) %>
+
+			<%= label_tag 'k: ' %><code>Only needed if Edge connect is set to K-Degree, otherwise k=-1</code><br>
+			<%= text_field_tag 'fnss_simple_types_brite_td_waxman_rt_waxman[k]', -1 %>
+
+			<%= label_tag 'bwinter' %><code>How bandwidth is assigned to edges within each AS</code><br>
+			<%= select_tag 'fnss_simple_types_brite_td_waxman_rt_waxman[BWInter]', options_for_select([["Constant", 1], 
+				["Uniform", 2],["HeavyTailed",3],["Exponetial",4]]) %>
+
+			<%= label_tag 'bwintermin' %><code>The minimum bandwidth assigned to an edge connect AS</code><br>
+			<%= text_field_tag 'fnss_simple_types_brite_td_waxman_rt_waxman[BWInterMin]', 10.0 %>
+
+			<%= label_tag 'bwintermax' %><code>The maximum bandwidth assigned to an edge connect AS</code><br>
+			<%= text_field_tag 'fnss_simple_types_brite_td_waxman_rt_waxman[BWInterMax]', 1024.0 %>
+
+			<%= label_tag 'bwintra' %><code>How bandwidth is assigned to edges within each router</code><br>
+			<%= select_tag 'fnss_simple_types_brite_td_waxman_rt_waxman[BWIntra]', options_for_select([["Constant", 1], 
+				["Uniform", 2],["HeavyTailed",3],["Exponetial",4]])%>
+
+			<%= label_tag 'bwintramin' %><code>The minimum bandwidth assigned to an edge connect router</code><br>
+			<%= text_field_tag 'fnss_simple_types_brite_td_waxman_rt_waxman[BWIntraMin]', 10.0 %>
+
+			<%= label_tag 'bwintramax' %><code>The maximum bandwidth assigned to an edge connect router</code><br>
+			<%=text_field_tag 'fnss_simple_types_brite_td_waxman_rt_waxman[BWIntraMax]', 1024.0 %>
+
+
+			<h1>AS</h1>
+
+
+			<%= hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[__Name]', :value => 3 %>
+			
+			<%= label_tag 'N' %><code>Number of AS nodes in graph</code><br>
+			<%=text_field_tag 'fnss_simple_types_brite_td_waxman_rt_waxman[N]', 100 %>
+			
+			<%= label_tag 'HS' %><code>Length of one side of the plane (number of unit squares)</code><br>
+			<%=text_field_tag 'fnss_simple_types_brite_td_waxman_rt_waxman[HS]', 1000 %>
+			
+			<%= label_tag 'LS' %><code>Length of inner plane (number of unit squares)</code><br>
+			<%=text_field_tag 'fnss_simple_types_brite_td_waxman_rt_waxman[LS]', 1000 %>
+			
+			<%= label_tag 'NodePlacement' %><code>How nodes are placed on the plane</code><br>
+			<%=select_tag 'fnss_simple_types_brite_td_waxman_rt_waxman[NodePlacement]', options_for_select([["Random",1],["HeavyTailed",2]])%>
+			
+			<%= hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[GrowthType]', :value => 1 %>
+			
+			<%= label_tag 'm' %><code>Number of neighboring node each new node connects to</code><br>
+			<%=text_field_tag 'fnss_simple_types_brite_td_waxman_rt_waxman[m]', 2 %>
+			
+			
+
+			<%#= label_tag 'alpha' %><br>
+			<%= hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[alpha]', :value => 0.15%>
+			
+			<%#= label_tag 'beta' %><br>
+			<%=hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[beta]', :value => 0.2 %>
+
+			<%#= label_tag 'BWDist' %><br>
+			<%=hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[BWDist]', :value => 1 %>
+			
+			<%#= label_tag 'BWMin' %><br>
+			<%=hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[BWMin]', :value => -1.0 %>
+			
+			<%#= label_tag 'BWMax' %><br>
+			<%=hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[BWMax]', :value => -1.0 %>
+
+
+
+			<h1>Router Level: Waxman</h1>
+
+
+			<%= hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[__Name_]', :value => 1 %>
+			
+			<%#= label_tag 'N' %><br>
+			<%= hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[N_]', :value => 100 %>
+			
+			<%#= label_tag 'HS' %><br>
+			<%=hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[HS_]', :value => 1000 %>
+			
+			<%#= label_tag 'LS' %><br>
+			<%=hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[LS_]', :value => 100 %>
+			
+			<%#= label_tag 'NodePlacement' %><br>
+			<%=hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[NodePlacement_]', :value => 1 %>
+			
+			<%= label_tag 'GrowthType' %><br>
+			<%=select_tag 'fnss_simple_types_brite_td_waxman_rt_waxman[GrowthType_]', options_for_select([["Incremental",1],["All",2]])%>
+
+			<%#= label_tag 'm' %><br>
+			<%=hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[m_]', :value => 2 %>
+
+			<%= label_tag 'aplha' %><br>
+			<%=text_field_tag 'fnss_simple_types_brite_td_waxman_rt_waxman[alpha_]', 0.15%>
+
+			<%#= label_tag 'beta' %><br>
+			<%=hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[beta_]', :value => 0.2%>
+
+			<%#= label_tag 'BWDist' %><br>
+			<%=hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[BWDist_]', :value => 1 %>
+
+			<%#= label_tag 'BWMin' %><br>
+			<%=hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[BWMin_]', :value => -1.0 %>
+
+			<%#= label_tag 'BWMax' %><br>
+			<%=hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[BWMax_]', :value => -1.0 %>
+		<% end %>
+
+	</div>
+	</div>
+</div>
+<div class="actions">
+    <%= f.submit %>
+</div>
+<% end %>
+

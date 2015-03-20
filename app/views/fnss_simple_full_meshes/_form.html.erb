@@ -1,0 +1,45 @@
+<%= form_for(@fnss_simple_full_mesh) do |f| %>
+  <% if @fnss_simple_full_mesh.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fnss_simple_full_mesh.errors.count, "error") %> prohibited this fnss_simple_full_mesh from being saved:</h2>
+
+      <ul>
+      <% @fnss_simple_full_mesh.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.number_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :full_mesh_node %><br>
+    <%= f.number_field :full_mesh_node %>
+  </div>
+  <div class="field">
+    <%= f.label :generator_id %><br>
+    <%= f.text_field :generator_id %>
+  </div>
+  <div class="field">
+    <%= f.label :type_id %><br>
+    <%= f.text_field :type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

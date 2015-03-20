@@ -1,0 +1,8 @@
+<html>
+	<h1>Rocket Fuel</h1>
+	<%= form_tag :action => 'create' do %>
+		<%= render :template => 'rocketfuel/rocketfuel' %>
+		<%= submit_tag "Enter" %>
+	<% end %>
+	  
+</html>

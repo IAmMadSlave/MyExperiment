@@ -1,0 +1,41 @@
+<h1>Listing fnss_datacenter_two_tiers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>N coretwo tier</th>
+      <th>N edgetwo tier</th>
+      <th>H hoststwo tier</th>
+      <th>Generator</th>
+      <th>Type</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fnss_datacenter_two_tiers.each do |fnss_datacenter_two_tier| %>
+      <tr>
+        <td><%= fnss_datacenter_two_tier.name %></td>
+        <td><%= fnss_datacenter_two_tier.description %></td>
+        <td><%= fnss_datacenter_two_tier.status %></td>
+        <td><%= fnss_datacenter_two_tier.n_coretwo_tier %></td>
+        <td><%= fnss_datacenter_two_tier.n_edgetwo_tier %></td>
+        <td><%= fnss_datacenter_two_tier.h_hoststwo_tier %></td>
+        <td><%= fnss_datacenter_two_tier.generator %></td>
+        <td><%= fnss_datacenter_two_tier.type %></td>
+        <td><%= fnss_datacenter_two_tier.user %></td>
+        <td><%= link_to 'Show', fnss_datacenter_two_tier %></td>
+        <td><%= link_to 'Edit', edit_fnss_datacenter_two_tier_path(fnss_datacenter_two_tier) %></td>
+        <td><%= link_to 'Destroy', fnss_datacenter_two_tier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fnss datacenter two tier', new_fnss_datacenter_two_tier_path %>

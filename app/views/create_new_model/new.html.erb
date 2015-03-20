@@ -1,0 +1,31 @@
+<html>	
+	<% if signed_in? %>
+		<h1>Choose a New Model</h1>
+		<div class="panel panel-default col-md-8 col-md-offset-2 new-model-panel"> 
+			<div class="col-md-6  form-group">
+				<%= link_to "Import Xml","", class: "btn btn-default form-control" %>
+			</div>
+			<div class="col-md-6 form-group">
+				<%= link_to "Import Ns-3","", class: "btn btn-default form-control" %>
+			</div>
+			<div class="col-md-12 form-group">
+				<%= link_to "Generate FNSS Simple",fnss_simple_new_path, class: "btn btn-default form-control" %>
+			</div>
+			<div class="col-md-12 form-group">
+				<%= link_to "Generate FNSS Datacenter",fnss_datacenter_new_path, class: "btn btn-default form-control" %>
+			</div>
+			<div class="col-md-12 form-group">
+				<%= link_to "Generate Brite",new_brite_path, class: "btn btn-default form-control" %>
+			</div>
+			<div class="col-md-12 form-group">
+				<%= link_to "Generate Inet",new_inet_path, class: "btn btn-default form-control" %>
+			</div>
+			<div class="col-md-12 form-group">
+				<%= link_to "Generate RocketFuel",new_rocketfuel_path, class: "btn btn-default form-control" %>
+			</div>
+		</div>
+	<% else %>
+		<h1 >Nothing to see here move along!</h1>
+	<% end %>
+</html>
+

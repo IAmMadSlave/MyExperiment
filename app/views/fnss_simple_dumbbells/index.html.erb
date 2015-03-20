@@ -1,0 +1,39 @@
+<h1>Listing fnss_simple_dumbbells</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Mone nodedumbell</th>
+      <th>Mtwo nodedumbell</th>
+      <th>Generator</th>
+      <th>Type</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fnss_simple_dumbbells.each do |fnss_simple_dumbbell| %>
+      <tr>
+        <td><%= fnss_simple_dumbbell.name %></td>
+        <td><%= fnss_simple_dumbbell.description %></td>
+        <td><%= fnss_simple_dumbbell.status %></td>
+        <td><%= fnss_simple_dumbbell.mone_nodedumbell %></td>
+        <td><%= fnss_simple_dumbbell.mtwo_nodedumbell %></td>
+        <td><%= fnss_simple_dumbbell.generator %></td>
+        <td><%= fnss_simple_dumbbell.type %></td>
+        <td><%= fnss_simple_dumbbell.user %></td>
+        <td><%= link_to 'Show', fnss_simple_dumbbell %></td>
+        <td><%= link_to 'Edit', edit_fnss_simple_dumbbell_path(fnss_simple_dumbbell) %></td>
+        <td><%= link_to 'Destroy', fnss_simple_dumbbell, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fnss simple dumbbell', new_fnss_simple_dumbbell_path %>

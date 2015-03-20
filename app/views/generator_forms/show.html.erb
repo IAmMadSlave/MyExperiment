@@ -1,0 +1,42 @@
+<br><br>
+<div class="panel panel-default">
+	<div class="panel-heading"><h3>Info</h3></div>
+	<div class="panel-body">
+		<table class="table table-hover"
+			
+			<tr>
+				<td><h5><%= @generator_form.name %></h5></td>
+				<td><h5><%= time_ago_in_words(@generator_form.created_at)%> ago</h5></td>
+			</tr>
+
+	 		<tr>
+	 			<td>
+					<h5><strong>Description:</strong></h5><br>
+					<%= @generator_form.description %>
+				</td>
+				<td></td>
+			</tr>
+
+			<tr>
+				<td>
+					<strong>Type:</strong><br>
+					<%= @generator_form.type.name %>
+				</td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<div class="center well">
+	<% if @generator_form.generator_id == 3 || @generator_form.generator_id == 4 %>
+	  <br/><br/>
+	  <div class="row">
+	    <div class="col-md-12">
+	      <iframe src="http://localhost:8000/temp.html" width="80%" height="500px" noborder></iframe>
+	    </div>
+	  </div>
+	<% end %>
+</div>
+
+<%= link_to 'Back', generator_forms_path, :class=>"btn btn-default" %>

@@ -1,0 +1,156 @@
+<%= form_for(@generator_form) do |f| %>
+  <% if @generator_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@generator_form.errors.count, "error") %> prohibited this generator_form from being saved:</h2>
+
+      <ul>
+      <% @generator_form.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.select(:status,options_for_select([["Public",1],["Private",0]])) %>
+  </div>
+
+  <%= f.hidden_field :generator_id, :value => params[:generator] %>
+  <%= f.hidden_field :type_id, :value => params[:type] %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+
+<div class="field">
+
+<%=fields_for :fnss_simple_types_brite_td_asbarabasi_rt_waxman do |b| %>
+<%#= render 'form', :f => builder %>
+<%= label_tag 'name' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[Name]'%>
+
+<%= label_tag 'edgeconn' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[edgeConn]'%>
+
+<%= label_tag 'k' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[k]'%>
+
+<%= label_tag 'bwinter' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[BWInter]'%>
+
+<%= label_tag 'bwintermin' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[BWInterMin]'%>
+
+<%= label_tag 'bwintermax' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[BWInterMax]'%>
+
+
+<%= label_tag 'bwintra' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[BWIntra]'%>
+
+<%= label_tag 'bwintramin' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[BWIntraMin]'%>
+
+<%= label_tag 'bwintramax' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[BWIntraMax]'%>
+
+
+<h1>Router Barbasi</h1>
+
+
+<%= label_tag 'Name' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[__Name]'%>
+<%= label_tag 'N' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[N]'%>
+<%= label_tag 'HS' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[HS]'%>
+<%= label_tag 'LS' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[LS]'%>
+<%= label_tag 'NodePlacement' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[NodePlacement]'%>
+<%= label_tag 'm' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[m]'%>
+<%= label_tag 'BWDist' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[BWDist]'%>
+<%= label_tag 'BWMin' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[BWMin]'%>
+<%= label_tag 'BWMax' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[BWMax]'%>
+
+
+
+
+
+<h1>Router Waxman</h1>
+
+
+<%= label_tag 'Name' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[__Name_]'%>
+<%= label_tag 'N' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[N_]'%>
+<%= label_tag 'HS' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[HS_]'%>
+<%= label_tag 'LS' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[LS_]'%>
+<%= label_tag 'NodePlacement' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[NodePlacement_]'%>
+<%= label_tag 'GrowthType' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[GrowthType_]'%>
+
+
+<%= label_tag 'm' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[m_]'%>
+
+<%= label_tag 'aplha' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[alpha_]'%>
+<%= label_tag 'beta' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[beta_]'%>
+
+<%= label_tag 'BWDist' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[BWDist_]'%>
+<%= label_tag 'BWMin' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[BWMin_]'%>
+<%= label_tag 'BWMax' %><br>
+<%=text_field_tag 'fnss_simple_types_brite_td_asbarabasi_rt_waxman[BWMax_]'%>
+
+
+
+
+
+
+
+
+<% end %>
+
+
+  </div >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

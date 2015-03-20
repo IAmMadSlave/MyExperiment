@@ -1,0 +1,53 @@
+<h1>Listing brite_td_asbarabasi_rt_waxmen</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Edgeconn</th>
+      <th>K</th>
+      <th>Bwinter</th>
+      <th>Bwintermin</th>
+      <th>Bwintermax</th>
+      <th>Bwintra</th>
+      <th>Bwintramin</th>
+      <th>Bwintramax</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Generator</th>
+      <th>Type</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @brite_td_asbarabasi_rt_waxmen.each do |brite_td_asbarabasi_rt_waxman| %>
+      <tr>
+        <td><%= brite_td_asbarabasi_rt_waxman.name %></td>
+        <td><%= brite_td_asbarabasi_rt_waxman.edgeconn %></td>
+        <td><%= brite_td_asbarabasi_rt_waxman.k %></td>
+        <td><%= brite_td_asbarabasi_rt_waxman.bwinter %></td>
+        <td><%= brite_td_asbarabasi_rt_waxman.bwintermin %></td>
+        <td><%= brite_td_asbarabasi_rt_waxman.bwintermax %></td>
+        <td><%= brite_td_asbarabasi_rt_waxman.bwintra %></td>
+        <td><%= brite_td_asbarabasi_rt_waxman.bwintramin %></td>
+        <td><%= brite_td_asbarabasi_rt_waxman.bwintramax %></td>
+        <td><%= brite_td_asbarabasi_rt_waxman.name %></td>
+        <td><%= brite_td_asbarabasi_rt_waxman.description %></td>
+        <td><%= brite_td_asbarabasi_rt_waxman.status %></td>
+        <td><%= brite_td_asbarabasi_rt_waxman.generator %></td>
+        <td><%= brite_td_asbarabasi_rt_waxman.type %></td>
+        <td><%= brite_td_asbarabasi_rt_waxman.user %></td>
+        <td><%= link_to 'Show', brite_td_asbarabasi_rt_waxman %></td>
+        <td><%= link_to 'Edit', edit_brite_td_asbarabasi_rt_waxman_path(brite_td_asbarabasi_rt_waxman) %></td>
+        <td><%= link_to 'Destroy', brite_td_asbarabasi_rt_waxman, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Brite td asbarabasi rt waxman', new_brite_td_asbarabasi_rt_waxman_path %>

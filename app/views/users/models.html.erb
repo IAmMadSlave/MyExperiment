@@ -1,0 +1,90 @@
+<html>
+	<% if signed_in? %>
+	
+		<div class="page-header"><h1>Models</h1></div>
+		<div class="panel panel-default">
+			<div class="panel-heading"><h3><%= link_to "+ Create New Model", generators_path %></h3></div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading"><h3>FNSS Simple</h3></div>
+			<ul class="list-group">
+				<li class="list-group-item">
+					<%= link_to "Ring" %>
+				</li>
+				<li class="list-group-item">
+					<%= link_to "Line" %>
+				</li>
+				<li class="list-group-item">
+					<%= link_to "Star" %>
+				</li>
+				<li class="list-group-item">
+					<%= link_to "Full Mesh" %>
+				</li>
+				<li class="list-group-item">
+					<%= link_to "K-ary Tree" %>
+				</li>
+				<li class="list-group-item">
+					<%= link_to "Dumbbell" %>
+				</li>
+			</ul>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading"><h3>FNSS Datacenter</h3></div>
+			<ul class="list-group">
+				<li class="list-group-item">
+					<%= link_to "Two Tier" %>
+				</li>
+				<li class="list-group-item">
+					<%= link_to "Star" %>
+				</li>
+				<li class="list-group-item">
+					<%= link_to "Three Tier" %>
+				</li>
+				<li class="list-group-item">
+					<%= link_to "Bcube" %>
+				</li>
+				<li class="list-group-item">
+					<%= link_to "Fat Tree" %>
+				</li>
+			</ul>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading"><h3>Brite</h3></div>
+			<ul class="list-group">
+				<li class="list-group-item">
+					<%= link_to "Top AS Waxman Router Waxman", controller: "brite", action: "index", :form_type => 0 %>
+				</li>
+				<li class="list-group-item">
+					<%= link_to "Top AS Barabasi Router Waxman", controller: "brite", action: "index", :form_type => 1 %>
+				</li>
+				<li class="list-group-item">
+					<%= link_to "AS Waxman", controller: "brite", action: "index", :form_type => 2 %>
+				</li>
+				<li class="list-group-item">
+					<%= link_to "Router Barabasi", controller: "brite", action: "index", :form_type => 3 %>
+				</li>
+				<li class="list-group-item">
+					<%= link_to "Router Waxman", controller: "brite", action: "index", :form_type => 4 %>
+				</li>
+			</ul>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading"><h3>INet</h3></div>
+			<ul class="list-group">
+				<li class="list-group-item">
+					<%= link_to "INet", controller: "inet", action: "index", :form_type => 0 %>
+				</li>
+			</ul>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading"><h3>RocketFuel</h3></div>
+			<ul class="list-group">
+				<li class="list-group-item">
+					<%= link_to "RocketFuel", controller: "rocketfuel", action: "index", :form_type => 0 %>
+				</li>
+			</ul>
+		</div>
+	<% else %>
+		<h1>Nothing to see here move along!</h1>
+	<% end %>
+</html>

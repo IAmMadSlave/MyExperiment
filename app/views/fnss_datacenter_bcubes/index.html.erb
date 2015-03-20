@@ -1,0 +1,39 @@
+<h1>Listing fnss_datacenter_bcubes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>K bcube</th>
+      <th>N bcube</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Generator</th>
+      <th>Type</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fnss_datacenter_bcubes.each do |fnss_datacenter_bcube| %>
+      <tr>
+        <td><%= fnss_datacenter_bcube.k_bcube %></td>
+        <td><%= fnss_datacenter_bcube.n_bcube %></td>
+        <td><%= fnss_datacenter_bcube.name %></td>
+        <td><%= fnss_datacenter_bcube.description %></td>
+        <td><%= fnss_datacenter_bcube.status %></td>
+        <td><%= fnss_datacenter_bcube.generator %></td>
+        <td><%= fnss_datacenter_bcube.type %></td>
+        <td><%= fnss_datacenter_bcube.user %></td>
+        <td><%= link_to 'Show', fnss_datacenter_bcube %></td>
+        <td><%= link_to 'Edit', edit_fnss_datacenter_bcube_path(fnss_datacenter_bcube) %></td>
+        <td><%= link_to 'Destroy', fnss_datacenter_bcube, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fnss datacenter bcube', new_fnss_datacenter_bcube_path %>

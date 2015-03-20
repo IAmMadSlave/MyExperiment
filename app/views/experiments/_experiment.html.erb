@@ -1,0 +1,9 @@
+<li id="experiment-<%= experiment.user_id %>">
+<p>
+    <strong><%= link_to experiment.name, experiment %></strong><br>
+    <%= experiment.topoType %> with <%= experiment.nodes %> nodes<br>
+    <%= time_ago_in_words(experiment.created_at) %> ago. 
+    <span style="float:right;"><strong>Tags: <%= experiment.tags %></strong>
+    <button type="button" class="btn btn-primary btn-xs" disabled="disabled">View</button></span>
+</p>
+</li>

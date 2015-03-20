@@ -1,0 +1,2 @@
+module CreateNewModelHelper
+end

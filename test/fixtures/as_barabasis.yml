@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 1
+  'n': 1
+  hs: 1
+  ls: 1
+  nodeplacement: 1
+  m: 1
+  bwdist: 1
+  bwmin: 1
+  bwmax: 1
+
+two:
+  name: 1
+  'n': 1
+  hs: 1
+  ls: 1
+  nodeplacement: 1
+  m: 1
+  bwdist: 1
+  bwmin: 1
+  bwmax: 1

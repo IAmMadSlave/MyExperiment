@@ -1,0 +1,73 @@
+<%= form_for(@brite_as_barabasis) do |f| %>
+  <% if @brite_as_barabasis.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@brite_as_barabasis.errors.count, "error") %> prohibited this brite_as_barabasis from being saved:</h2>
+
+      <ul>
+      <% @brite_as_barabasis.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :n %><br>
+    <%= f.number_field :n %>
+  </div>
+  <div class="field">
+    <%= f.label :hs %><br>
+    <%= f.number_field :hs %>
+  </div>
+  <div class="field">
+    <%= f.label :ls %><br>
+    <%= f.number_field :ls %>
+  </div>
+  <div class="field">
+    <%= f.label :nodeplacement %><br>
+    <%= f.number_field :nodeplacement %>
+  </div>
+  <div class="field">
+    <%= f.label :m %><br>
+    <%= f.number_field :m %>
+  </div>
+  <div class="field">
+    <%= f.label :bwdist %><br>
+    <%= f.number_field :bwdist %>
+  </div>
+  <div class="field">
+    <%= f.label :bwmin %><br>
+    <%= f.number_field :bwmin %>
+  </div>
+  <div class="field">
+    <%= f.label :bwmax %><br>
+    <%= f.number_field :bwmax %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.number_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :generator_id %><br>
+    <%= f.text_field :generator_id %>
+  </div>
+  <div class="field">
+    <%= f.label :type_id %><br>
+    <%= f.text_field :type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,43 @@
+<h1>Listing fnss_datacenter_three_tiers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>N corethree tier</th>
+      <th>N aggregationthree tier</th>
+      <th>N edgesthree tier</th>
+      <th>N hoststhree tier</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Generator</th>
+      <th>Type</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fnss_datacenter_three_tiers.each do |fnss_datacenter_three_tier| %>
+      <tr>
+        <td><%= fnss_datacenter_three_tier.n_corethree_tier %></td>
+        <td><%= fnss_datacenter_three_tier.n_aggregationthree_tier %></td>
+        <td><%= fnss_datacenter_three_tier.n_edgesthree_tier %></td>
+        <td><%= fnss_datacenter_three_tier.n_hoststhree_tier %></td>
+        <td><%= fnss_datacenter_three_tier.name %></td>
+        <td><%= fnss_datacenter_three_tier.description %></td>
+        <td><%= fnss_datacenter_three_tier.status %></td>
+        <td><%= fnss_datacenter_three_tier.generator %></td>
+        <td><%= fnss_datacenter_three_tier.type %></td>
+        <td><%= fnss_datacenter_three_tier.user %></td>
+        <td><%= link_to 'Show', fnss_datacenter_three_tier %></td>
+        <td><%= link_to 'Edit', edit_fnss_datacenter_three_tier_path(fnss_datacenter_three_tier) %></td>
+        <td><%= link_to 'Destroy', fnss_datacenter_three_tier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fnss datacenter three tier', new_fnss_datacenter_three_tier_path %>

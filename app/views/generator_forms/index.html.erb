@@ -1,0 +1,51 @@
+<br>
+<div class="page-header"><h1>Create a Model</h1></div>
+<div class="panel panel-default col-md-12">
+	<div class="panel-body center">
+		<%=link_to "+ Create New Model", generators_path, :class=>"btn btn-default" %>
+	</div>
+</div>
+
+<br><br><br>
+
+<div class="page-header"><h1>My Models</h1></div>
+
+<div class="well">
+	<div class="panel panel-default">
+		<div class="panel-heading">Models Created <span class="badge"><%= @generator_forms.count %></span></div>
+	
+		<% if @generator_forms.count == 0 %>
+			<div class="panel-body">
+				No models created yet.
+			</div>
+		<% else %>
+			<table class="table">
+		
+				<% @generator_forms.each do |generator_form| %>
+					<tr class="alert alert-info">
+						<td><%= generator_form.name %></td>
+						<td>Created: <%= time_ago_in_words(generator_form.created_at)%> ago</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><%= generator_form.description.to(20) %></td>
+						<td></td>
+						<td><%= link_to 'View Model', generator_form, :class=> "btn btn-success btn-xs" %></td>
+						<%#= link_to 'Edit', edit_generator_form_path(generator_form) %>
+						<td><%= link_to 'Destroy', generator_form, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "btn btn-danger btn-xs" %></td>
+					</tr>
+				
+				<% end %>
+			</table>
+			<%#= will_paginate @generator_forms %>
+		<% end %>
+	</div>
+
+</div>
+
+<br>
+
+<%#= link_to 'New Generator form', new_generator_form_path %>
+
+

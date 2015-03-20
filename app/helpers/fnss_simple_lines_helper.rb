@@ -1,0 +1,2 @@
+module FnssSimpleLinesHelper
+end

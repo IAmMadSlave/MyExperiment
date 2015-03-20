@@ -1,0 +1,20 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+    <aside class="col-md-4">
+        <section>
+            <h1>
+               
+                <%= session[:user] %>
+            </h1>
+        </section>
+    </aside>
+    <div class="col-md-8">
+        <% if @user.experiments.any? %>
+            <h3>Published experiments (<%= @user.experiments.count %>) | Private experiments (0)</h3>
+            <ol class="experiments">
+                <%= render @experiments %>
+            </ol>
+            <%= will_paginate @experiments %>
+        <% end %>
+    </div>
+</div>

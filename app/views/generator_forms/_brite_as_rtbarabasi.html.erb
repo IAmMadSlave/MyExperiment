@@ -1,0 +1,83 @@
+<%= form_for(@generator_form) do |f| %>
+  <% if @generator_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@generator_form.errors.count, "error") %> prohibited this generator_form from being saved:</h2>
+
+      <ul>
+      <% @generator_form.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.select(:status,options_for_select([["Public",1],["Private",0]])) %>
+  </div>
+
+  <%= f.hidden_field :generator_id, :value => params[:generator] %>
+  <%= f.hidden_field :type_id, :value => params[:type] %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  
+<div class="field">
+
+<%=fields_for :fnss_simple_types_brtite_as_rtbarabasi do |b| %>
+
+<%= label_tag 'name' %><br>
+<%=text_field_tag 'fnss_simple_types_brtite_as_rtbarabasi[Name]'%>
+
+<%= label_tag 'n' %><br>
+<%=text_field_tag 'fnss_simple_types_brtite_as_rtbarabasi[N]'%>
+
+<%= label_tag 'hs' %><br>
+<%=text_field_tag 'fnss_simple_types_brtite_as_rtbarabasi[HS]'%>
+<%= label_tag 'ls' %><br>
+<%=text_field_tag 'fnss_simple_types_brtite_as_rtbarabasi[LS]'%>
+<%= label_tag 'nodeplacement' %><br>
+<%=text_field_tag 'fnss_simple_types_brtite_as_rtbarabasi[NodePlacement]'%>
+<%= label_tag 'm' %><br>
+<%=text_field_tag 'fnss_simple_types_brtite_as_rtbarabasi[m]'%>
+
+<%= label_tag 'bwdist' %><br>
+<%=text_field_tag 'fnss_simple_types_brtite_as_rtbarabasi[BWDist]'%>
+<%= label_tag 'bwmin' %><br>
+<%=text_field_tag 'fnss_simple_types_brtite_as_rtbarabasi[BWMin]'%>
+<%= label_tag 'bwmax' %><br>
+<%=text_field_tag 'fnss_simple_types_brtite_as_rtbarabasi[BWMax]'%>
+<% end %>
+
+
+  </div >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

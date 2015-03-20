@@ -1,0 +1,2 @@
+module FnssSimpleDumbbellsHelper
+end

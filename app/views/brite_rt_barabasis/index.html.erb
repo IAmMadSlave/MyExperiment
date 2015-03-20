@@ -1,0 +1,51 @@
+<h1>Listing brite_rt_barabasis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>N</th>
+      <th>Hs</th>
+      <th>Ls</th>
+      <th>Nodeplacement</th>
+      <th>M</th>
+      <th>Bwdist</th>
+      <th>Bwmin</th>
+      <th>Bwmax</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Generator</th>
+      <th>Type</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @brite_rt_barabasis.each do |brite_rt_barabasis| %>
+      <tr>
+        <td><%= brite_rt_barabasis.n %></td>
+        <td><%= brite_rt_barabasis.hs %></td>
+        <td><%= brite_rt_barabasis.ls %></td>
+        <td><%= brite_rt_barabasis.nodeplacement %></td>
+        <td><%= brite_rt_barabasis.m %></td>
+        <td><%= brite_rt_barabasis.bwdist %></td>
+        <td><%= brite_rt_barabasis.bwmin %></td>
+        <td><%= brite_rt_barabasis.bwmax %></td>
+        <td><%= brite_rt_barabasis.name %></td>
+        <td><%= brite_rt_barabasis.description %></td>
+        <td><%= brite_rt_barabasis.status %></td>
+        <td><%= brite_rt_barabasis.generator %></td>
+        <td><%= brite_rt_barabasis.type %></td>
+        <td><%= brite_rt_barabasis.user %></td>
+        <td><%= link_to 'Show', brite_rt_barabasis %></td>
+        <td><%= link_to 'Edit', edit_brite_rt_barabasis_path(brite_rt_barabasis) %></td>
+        <td><%= link_to 'Destroy', brite_rt_barabasis, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Brite rt barabasi', new_brite_rt_barabasis_path %>

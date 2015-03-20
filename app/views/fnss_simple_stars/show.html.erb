@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @fnss_simple_star.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @fnss_simple_star.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @fnss_simple_star.status %>
+</p>
+
+<p>
+  <strong>Star node:</strong>
+  <%= @fnss_simple_star.star_node %>
+</p>
+
+<p>
+  <strong>Generator:</strong>
+  <%= @fnss_simple_star.generator %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @fnss_simple_star.type %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @fnss_simple_star.user %>
+</p>
+
+<%= link_to 'Edit', edit_fnss_simple_star_path(@fnss_simple_star) %> |
+<%= link_to 'Back', fnss_simple_stars_path %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @fnss_simple_line.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @fnss_simple_line.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @fnss_simple_line.status %>
+</p>
+
+<p>
+  <strong>Line node:</strong>
+  <%= @fnss_simple_line.line_node %>
+</p>
+
+<p>
+  <strong>Generator:</strong>
+  <%= @fnss_simple_line.generator %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @fnss_simple_line.type %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @fnss_simple_line.user %>
+</p>
+
+<%= link_to 'Edit', edit_fnss_simple_line_path(@fnss_simple_line) %> |
+<%= link_to 'Back', fnss_simple_lines_path %>

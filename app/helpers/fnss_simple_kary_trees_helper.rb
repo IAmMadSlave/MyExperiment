@@ -1,0 +1,2 @@
+module FnssSimpleKaryTreesHelper
+end

@@ -1,0 +1,2 @@
+module BriteAsWaxmenHelper
+end

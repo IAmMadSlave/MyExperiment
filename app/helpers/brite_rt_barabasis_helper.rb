@@ -1,0 +1,2 @@
+module BriteRtBarabasisHelper
+end

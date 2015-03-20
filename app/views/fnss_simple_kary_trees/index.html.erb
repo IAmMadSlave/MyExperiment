@@ -1,0 +1,37 @@
+<h1>Listing fnss_simple_kary_trees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>K branching factor</th>
+      <th>Generator</th>
+      <th>Type</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fnss_simple_kary_trees.each do |fnss_simple_kary_tree| %>
+      <tr>
+        <td><%= fnss_simple_kary_tree.name %></td>
+        <td><%= fnss_simple_kary_tree.description %></td>
+        <td><%= fnss_simple_kary_tree.status %></td>
+        <td><%= fnss_simple_kary_tree.k_branching_factor %></td>
+        <td><%= fnss_simple_kary_tree.generator %></td>
+        <td><%= fnss_simple_kary_tree.type %></td>
+        <td><%= fnss_simple_kary_tree.user %></td>
+        <td><%= link_to 'Show', fnss_simple_kary_tree %></td>
+        <td><%= link_to 'Edit', edit_fnss_simple_kary_tree_path(fnss_simple_kary_tree) %></td>
+        <td><%= link_to 'Destroy', fnss_simple_kary_tree, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fnss simple kary tree', new_fnss_simple_kary_tree_path %>

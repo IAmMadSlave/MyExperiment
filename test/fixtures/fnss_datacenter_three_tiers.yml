@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  n_corethree_tier: 1
+  n_aggregationthree_tier: 1
+  n_edgesthree_tier: 1
+  n_hoststhree_tier: 1
+  name: MyString
+  description: MyText
+  status: 1
+  generator_id: 
+  type_id: 
+  user_id: 
+
+two:
+  n_corethree_tier: 1
+  n_aggregationthree_tier: 1
+  n_edgesthree_tier: 1
+  n_hoststhree_tier: 1
+  name: MyString
+  description: MyText
+  status: 1
+  generator_id: 
+  type_id: 
+  user_id: 

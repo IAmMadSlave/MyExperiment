@@ -1,0 +1,21 @@
+<%= form_for(@create_fnss_simple_ring) do |f| %>
+  <% if @create_fnss_simple_ring.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@create_fnss_simple_ring.errors.count, "error") %> prohibited this create_fnss_simple_ring from being saved:</h2>
+
+      <ul>
+      <% @create_fnss_simple_ring.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :n %><br>
+    <%= f.number_field :n %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

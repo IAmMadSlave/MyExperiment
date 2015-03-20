@@ -1,0 +1,87 @@
+<div class="col-md-9">
+	<div class="table-responsive">
+		<table class="table table-bordered table-striped">
+
+		<thead>
+			<th><h3>AS Only</h3></th>
+			<th><h3>Values</h3></th>
+		</thead>
+		<tbody>
+		
+		<tr>
+			<th class="text-nowrap" scope="row">seed</th>
+			<td><%= number_field :userform, :seed, :value => 0, :options => {:min=>1,:max=>3} %></td>
+		</tr>
+		<tr>
+			<th class="text-nowrap" scope="row">cut</th>
+			<td><%= number_field :userform, :cut, :value => -1, :options => {:min=>1,:max=>3} %></td>
+		</tr>
+		
+		<thread>
+			<th><h3>ISP</h3></th>
+		</thread>
+		
+		<tr>
+			<th class="text-nowrap" scope="row">AT&T</th>
+			<td><%= select :userform, :ATT, options_for_select([["Enable","Enable"],
+			["Disable","Disable"]]) %></td>
+		</tr>
+		<tr>
+			<th class="text-nowrap" scope="row">Cable&Wireless</th>
+			<td><%= select :userform, :CableWireLess, options_for_select([["Disable","Disable"],
+			["Enable","Enable"]]) %></td>
+		</tr>
+		<tr>
+			<th class="text-nowrap" scope="row">Ebone</th>
+			<td><%= select :userform, :Ebone, options_for_select([["Disable","Disable"],
+			["Enable","Enable"]]) %></td>
+		</tr>
+		<tr>
+			<th class="text-nowrap" scope="row">Exodus</th>
+			<td><%= select :userform, :Exodus, options_for_select([["Disable","Disable"],
+			["Enable","Enable"]]) %></td>
+		</tr>
+		<tr>
+			<th class="text-nowrap" scope="row">Level3</th>
+			<td><%= select :userform, :Level3, options_for_select([["Disable","Disable"],
+			["Enable","Enable"]]) %></td>
+		</tr>
+		<tr>
+			<th class="text-nowrap" scope="row">Sprint</th>
+			<td><%= select :userform, :Sprint, options_for_select([["Disable","Disable"],
+			["Enable","Enable"]]) %></td>
+		</tr>
+		<tr>
+			<th class="text-nowrap" scope="row">TATACOMM</th>
+			<td><%= select :userform, :TATACOMM, options_for_select([["Disable","Disable"],
+			["Enable","Enable"]]) %></td>
+		</tr>
+		<tr>
+			<th class="text-nowrap" scope="row">Telstra</th>
+			<td><%= select :userform, :Telstra, options_for_select([["Disable","Disable"],
+			["Enable","Enable"]]) %></td>
+		</tr>
+		<tr>
+			<th class="text-nowrap" scope="row">Tiscali</th>
+			<td><%= select :userform, :Tiscali, options_for_select([["Disable","Disable"],
+			["Enable","Enable"]]) %></td>
+		</tr>
+		<tr>
+			<th class="text-nowrap" scope="row">UUNET701</th>
+			<td><%= select :userform, :UUNET703, options_for_select([["Disable","Disable"],
+			["Enable","Enable"]]) %></td>
+		</tr>
+		<tr>
+			<th class="text-nowrap" scope="row">Verio</th>
+			<td><%= select :userform, :Verio, options_for_select([["Disable","Disable"],
+			["Enable","Enable"]]) %></td>
+		</tr>
+		<tr>
+			<th class="text-nowrap" scope="row">Abovenet</th>
+			<td><%= select :userform, :Abovenet, options_for_select([["Disable","Disable"],
+			["Enable","Enable"]]) %></td>
+		</tr>
+		</tbody>
+	</table>
+	</div>
+</div>

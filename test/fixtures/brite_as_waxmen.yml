@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  'n': 1
+  hs: 1
+  ls: 1
+  nodeplacement: 1
+  growth_type: 1
+  alpha: 9.99
+  beta: 9.99
+  m: 1
+  bwdist: 1
+  bwmin: 1
+  bwmax: 1
+  name: MyString
+  description: MyText
+  status: 1
+  generator_id: 
+  type_id: 
+  user_id: 
+
+two:
+  'n': 1
+  hs: 1
+  ls: 1
+  nodeplacement: 1
+  growth_type: 1
+  alpha: 9.99
+  beta: 9.99
+  m: 1
+  bwdist: 1
+  bwmin: 1
+  bwmax: 1
+  name: MyString
+  description: MyText
+  status: 1
+  generator_id: 
+  type_id: 
+  user_id: 
