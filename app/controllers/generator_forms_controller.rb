@@ -191,6 +191,14 @@ class GeneratorFormsController < ApplicationController
             :bwmin_waxman=>params[:fnss_simple_types_brite_td_waxman_rt_waxman][:BWMin_],
             :bwmax_waxman=>params[:fnss_simple_types_brite_td_waxman_rt_waxman][:BWMax_],
             :generator_form_id=>@generator_form.id)
+            
+            
+            if params[:attach][:checkBox]
+            	for x in params[:attach]
+            		print x
+            	end
+            end
+            
           brite_creation(session[:user_id],params[:fnss_simple_types_brite_td_waxman_rt_waxman],@generator_form.id)
         elsif params[:generator_form][:type_id] =="17"
           uploaded_io = params[:generator_form][:xml]
@@ -235,23 +243,25 @@ class GeneratorFormsController < ApplicationController
 
 
 def brite_creation(u,params,generator_id)
+	@file_conf = file(params)
+	@config_file = generator_id.to_s
 
-  #@user = u
-    @file_conf = file(params)
-    @config_file = generator_id.to_s
+	File.open("app/temp/"+@config_file+ ".conf", "w") do |f|
+		f.write(@file_conf)
+	end 
+	
+	p @parent_dir = File.expand_path(Dir.getwd)
 
-  File.open("app/temp/"+@config_file+ ".conf", "w") do |f|
-      f.write(@file_conf)
-    end 
-      p @parent_dir = File.expand_path(Dir.getwd)
-    
-    config_to_brite(@parent_dir+"/app/temp/"+@config_file+ ".conf", @parent_dir+"/app/temp/"+@config_file)
+	config_to_brite(@parent_dir+"/app/temp/"+@config_file+ ".conf", @parent_dir+"/app/temp/"+@config_file)
 end
+
 
   def config_to_brite(config_file, output_file)
     print "PROCESSING: #{config_file} => #{output_file} ********\n" 
     return system("cd external/brite/; java -cp . Main.Brite #{config_file} #{output_file} ./seed_file")
   end
+  
+  
   def file(param)
     file_contents = "BriteConfig\n\nBeginModel\n"
     

@@ -110,7 +110,6 @@
 			<%=hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[BWMax]', :value => -1.0 %>
 
 
-
 			<h1>Router Level: Waxman</h1>
 
 
@@ -148,11 +147,97 @@
 
 			<%#= label_tag 'BWMax' %><br>
 			<%=hidden_field 'fnss_simple_types_brite_td_waxman_rt_waxman[BWMax_]', :value => -1.0 %>
+			
+			
+			<div class="btn btn-default"><a href="#skip">Skip to Bottom</a></div>
+			<br></br>
 		<% end %>
-
+		
+		<%= fields_for :attach do |b| %>
+			<div class="bg-info col-md-12 center"><%= label_tag 'Attach hosts' %><%= check_box_tag 'attach[checkBox]', false %></div>
+			<br></br>
+			
+			<%= label_tag 'Number of subnets' %>
+			<div class="well">
+				<%= label_tag 'Minimum' %>
+				<%=text_field_tag 'attach[MinSubnets]', 25 %>
+				<%= label_tag 'Maximum' %>
+				<%=text_field_tag 'attach[MaxSubnets]', 25 %>
+			</div>
+			
+			<%= label_tag 'Number of routers within each subnet' %>
+			<div class="well">
+				<%= label_tag 'Minimum' %>
+				<%=text_field_tag 'attach[MinRouters]', 2 %>
+				<%= label_tag 'Maximum' %>
+				<%=text_field_tag 'attach[MaxRouters]', 2 %>
+			</div>
+			
+			<%= label_tag 'Number of hosts attached to router' %>
+			<div class="well">
+				<%= label_tag 'Minimum' %>
+				<%=text_field_tag 'attach[MinHosts]', 2 %>
+				<%= label_tag 'Maximum' %>
+				<%=text_field_tag 'attach[MaxHosts]', 2 %>
+			</div>
+			
+			<table class="table">
+				<tr>
+					<td>
+						<%= label_tag 'Router-to-router link bandwidth (Kb/s)' %>
+						<div class="well">
+							<%= label_tag 'Minimum' %>
+							<%=text_field_tag 'attach[MinRR_BW]', 10000 %>
+							<%= label_tag 'Maximum' %>
+							<%=text_field_tag 'attach[MaxRR_BW]', 10000 %>
+							<%= label_tag 'Assignment method' %>
+							<%=select_tag 'attach[AssignmentRR_BW]', options_for_select([["CONSTANT",0],["UNIFORM",1],["HEAVYTAILED",2],["EXPONENTIAL",3]])%>
+						</div>
+					</td>
+					<td>
+						<%= label_tag 'Router-to-router link latency (milliseconds)' %>
+						<div class="well">
+							<%= label_tag 'Minimum' %>
+							<%=text_field_tag 'attach[MinRR_L]', 10000 %>
+							<%= label_tag 'Maximum' %>
+							<%=text_field_tag 'attach[MaxRR_L]', 10000 %>
+							<%= label_tag 'Assignment method' %>
+							<%=select_tag 'attach[AssignmentRR_L]', options_for_select([["CONSTANT",0],["UNIFORM",1],["HEAVYTAILED",2],["EXPONENTIAL",3]])%>
+						</div>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<%= label_tag 'Host link bandwidth (Kb/s)' %>
+						<div class="well">
+							<%= label_tag 'Minimum' %>
+							<%=text_field_tag 'attach[MinH_BW]', 10000 %>
+							<%= label_tag 'Maximum' %>
+							<%=text_field_tag 'attach[MaxH_BW]', 10000 %>
+							<%= label_tag 'Assignment method' %>
+							<%=select_tag 'attach[AssignmentH_BW]', options_for_select([["CONSTANT",0],["UNIFORM",1],["HEAVYTAILED",2],["EXPONENTIAL",3]])%>
+						</div>
+					</td>
+					<td>
+						<%= label_tag 'Host link latency (milliseconds)' %>
+						<div class="well">
+							<%= label_tag 'Minimum' %>
+							<%=text_field_tag 'attach[MinH_L]', 10000 %>
+							<%= label_tag 'Maximum' %>
+							<%=text_field_tag 'attach[MaxH_L]', 10000 %>
+							<%= label_tag 'Assignment method' %>
+							<%=select_tag 'attach[AssignmentH_L]', options_for_select([["CONSTANT",0],["UNIFORM",1],["HEAVYTAILED",2],["EXPONENTIAL",3]])%>
+						</div>
+					</td>
+				</tr>
+			</table>
+		<% end %>
 	</div>
 	</div>
 </div>
+
+<a name="skip"></a>
 <div class="actions">
     <%= f.submit %>
 </div>
