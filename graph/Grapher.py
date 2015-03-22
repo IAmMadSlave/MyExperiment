@@ -64,10 +64,10 @@ class Grapher():
                     if s is not None and nodename.find( top['name'] ) > -1:
                         self.subnets[i]['nodes'].append( interfacename )
 
-                    g.add_node( interfacename, type='interface',
-                        bit_rate=interface['bit_rate'], 
-                        latency=self.str_to_num( interface['latency'] ))
-                    g.add_edge( interfacename, nodename )
+                    #g.add_node( interfacename, type='interface',
+                    #    bit_rate=interface['bit_rate'], 
+                    #    latency=self.str_to_num( interface['latency'] ))
+                    #g.add_edge( interfacename, nodename )
 
         if top.has_key( 'routers' ):
             for router in top['routers']:
@@ -89,10 +89,10 @@ class Grapher():
                     if s is not None and nodename.find( top['name'] ) > -1:
                         self.subnets[i]['nodes'].append( interfacename )
                     
-                    g.add_node( interfacename, type='interface',
-                        bit_rate=interface['bit_rate'],
-                        latency=self.str_to_num( interface['latency'] ) )
-                    g.add_edge( interfacename, nodename )
+                    #g.add_node( interfacename, type='interface',
+                    #    bit_rate=interface['bit_rate'],
+                    #    latency=self.str_to_num( interface['latency'] ) )
+                    #g.add_edge( interfacename, nodename )
 
         if top.has_key( 'links' ):
             for link in top['links']:
@@ -112,6 +112,12 @@ class Grapher():
                 else:
                     for i in range( len( path ) ):
                         path[i] = path[i].replace( ':', '', 1 )
+    
+                i = 0
+                for i in range( len( path ) ):
+                    lastintf = path[i].rfind( ':' )
+                    path[i] = path[i][0:lastintf]
+
                 g.add_edge( path[0], path[1],
                     bandwidth=link['bandwidth'], 
                     delay=self.str_to_num( link['delay'] ),
