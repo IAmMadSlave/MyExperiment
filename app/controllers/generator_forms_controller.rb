@@ -6,15 +6,16 @@ class GeneratorFormsController < ApplicationController
   # GET /generator_forms.json
   def index
     @generator_forms = GeneratorForm.all.reverse
-    @generator_forms_status_one = GeneratorForm.where(:status=>"1")
-    @generator_forms_status_zero = GeneratorForm.where(:status=>"0")
+    @generator_forms_status_one = GeneratorForm.where(:status => "1")
+    @generator_forms_status_zero = GeneratorForm.where(:status => "0", :user_id => current_user.id.to_i)
   end
 
   # GET /generator_forms/1
   # GET /generator_forms/1.json
   def show
     if @generator_form.generator_id == 3
-      @brite_file_path = "../app/temp/#{@generator_form.id}.brite"	
+      @brite_file_path = "../app/temp/#{@generator_form.id}.brite"
+	
       return system("cd graph; python britevis.py #{@brite_file_path}")
     elsif @generator_form.generator_id == 4
       @xml_file_path = "../app/xml/#{@generator_form.id}.xml"
@@ -244,11 +245,7 @@ def brite_creation(u,params,generator_id)
     end 
       p @parent_dir = File.expand_path(Dir.getwd)
     
-    if config_to_brite(@parent_dir+"/app/temp/"+@config_file+ ".conf", @parent_dir+"/app/temp/"+@config_file)
-      print "____________YES_____________\n"
-    else
-      print "____________FAIL_____________\n"
-    end
+    config_to_brite(@parent_dir+"/app/temp/"+@config_file+ ".conf", @parent_dir+"/app/temp/"+@config_file)
 end
 
   def config_to_brite(config_file, output_file)
@@ -283,14 +280,8 @@ end
     return file_contents
   end
 
-  def xml_download
-    @generator_form = GeneratorForm.find(params[:id])
-    send_file(
-      "#{Rails.root}/app/xml/#{@generator_form.id}.xml",
-      filename: "#{@generator_form.name}.xml",
-      type: "application/xml"
-    )
-  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_generator_form

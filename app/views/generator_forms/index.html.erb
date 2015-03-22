@@ -13,35 +13,82 @@
 <div class="well">
 	<div class="panel panel-default">
 		<div class="panel-heading">Models Created <span class="badge"><%= @generator_forms.count %></span></div>
-	
-		<% if @generator_forms.count == 0 %>
-			<div class="panel-body">
-				No models created yet.
-			</div>
-		<% else %>
-			<table class="table">
-		
-				<% @generator_forms.each do |generator_form| %>
-					<tr class="alert alert-info">
-						<td><%= generator_form.name %></td>
-						<td>Created: <%= time_ago_in_words(generator_form.created_at)%> ago</td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td><%= generator_form.description.to(20) %></td>
-						<td></td>
-						<td><%= link_to 'View Model', generator_form, :class=> "btn btn-success btn-xs" %></td>
-						<%#= link_to 'Edit', edit_generator_form_path(generator_form) %>
-						<td><%= link_to 'Destroy', generator_form, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "btn btn-danger btn-xs" %></td>
-					</tr>
-				
-				<% end %>
-			</table>
-			<%#= will_paginate @generator_forms %>
-		<% end %>
-	</div>
 
+			<div role="tabpanel">
+
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#private" aria-controls="private" role="tab" data-toggle="tab">Private <span class="badge"><%= @generator_forms_status_zero.count %></span></a>
+					</li>
+					<li role="presentation"><a href="#public" aria-controls="public" role="tab" data-toggle="tab">Public <span class="badge"><%= @generator_forms_status_one.count %></span></a>
+					</li>
+				</ul>
+
+				</br>
+				
+				<% if @generator_forms.count == 0 %>
+							<div class="panel-body">
+								No models created yet.
+							</div>
+				<% else %>
+				<!-- Tab panes -->
+				<div class="tab-content">
+				
+				
+					<!-- Private -->
+					<div role="tabpanel" class="tab-pane active" id="private">
+						<table class="table">
+		
+							<% @generator_forms_status_zero.each do |generator_form| %>
+							<tr class="alert alert-info">
+								<td><%= generator_form.name %></td>
+								<td>Created: <%= time_ago_in_words(generator_form.created_at)%> ago</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><%= generator_form.description.to(20) %></td>
+								<td></td>
+								<td><%= link_to 'View Model', generator_form, :class=> "btn btn-success btn-xs" %></td>
+								<%#= link_to 'Edit', edit_generator_form_path(generator_form) %>
+								<td><%= link_to 'Destroy', generator_form, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "btn btn-danger btn-xs" %></td>
+							</tr>
+				
+							<% end %>
+						</table>
+						<%#= will_paginate @generator_forms_status_zero %>
+					</div>	<!-- end Private -->
+					
+					
+					<!-- Public -->
+					<div role="tabpanel" class="tab-pane" id="public">
+						
+						<table class="table">
+		
+							<% @generator_forms_status_one.each do |generator_form| %>
+							<tr class="alert alert-info">
+								<td><%= generator_form.name %></td>
+								<td>Created: <%= time_ago_in_words(generator_form.created_at)%> ago</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><%= generator_form.description.to(20) %></td>
+								<td></td>
+								<td><%= link_to 'View Model', generator_form, :class=> "btn btn-success btn-xs" %></td>
+								<%#= link_to 'Edit', edit_generator_form_path(generator_form) %>
+								<td><%= link_to 'Destroy', generator_form, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "btn btn-danger btn-xs" %></td>
+							</tr>
+				
+							<% end %>
+						</table>
+						<%#= will_paginate @generator_forms_status_zero %>
+					</div>
+				</div>
+				<% end %>
+			</div>	<!-- end TabPanel -->
+		</div>
+	</div>
 </div>
 
 <br>
